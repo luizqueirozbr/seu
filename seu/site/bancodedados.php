@@ -22,7 +22,10 @@
 	
 	$banco = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 	
-	if(mysqli_connect_errno){
+	/*if(!mysqli_connect_errno){
 		header('location: /seu/site/erro.php?tipo=2');
 		
-		}
+		}else{
+			
+			}
+			*/ 

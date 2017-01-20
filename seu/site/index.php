@@ -78,6 +78,7 @@ body{
     <ul class="nav navbar-nav">
       <li id="menu" class="active"><a href="#box_home">Inicio</a></li>
       <li id="menu"><a href="../site/cadastro/index.php#frm_ca"> <span class="glyphicon glyphicon-user"> Usuarios</a></li>
+      <li id="menu"><a href="../site/ferramentas/"><span class="glyphicon glyphicon-console"> Ferramentas</a></li>
       <li><a href="#"></a></li>
       <li></li>
     </ul>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documento sem título</title>
+<title>ops...</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <style>
@@ -84,7 +84,7 @@ $erro_tipo = $_GET['tipo'];
 <center>
 <div id="erro_a" class="alert-danger"><p class="alert">
 <h1>Ops</h1>
-Acesso negado</p>
+<?php echo "Codigo: #". $erro_tipo; ?></p>
 
 </div> 
 <img src="../media/queiroz.png" height="90">
