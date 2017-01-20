@@ -6,10 +6,18 @@
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
 <?php
  include('../session.php');
-# include('../bancodedados.php')
+#include('../bancodedados.php')
+$query = "select * from usuario";
+
+$resultado = mysqli_query($banco, $query);
+$rows = array();
+while ($row = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+$rows[] = $row;
+}
+
+   ?>
 
 
- ?>
 <style type="text/css">
 .title{
     cursor: alias;
@@ -40,7 +48,9 @@ div {
     .coluna{
         height:25px;
         padding: 5px;
-        border: 0px solid #D4D5ED;
+        border-bottom: 1px solid #D4D5ED;
+        border-left: 1px solid #D4D5ED;
+        border-right: 1px solid #D4D5ED;
         width:120;
         float:left;
     }
@@ -72,21 +82,45 @@ E-mail
      </div>
 
      <!-- fim da linha de titulo-->
-    <!-- crinado linhas de resultados -->
-    <div class="linha"><!-- div de linha de titulo da tabela -->
-  <div class="coluna result"><!-- foto user -->
+    <!-- crinado linhas de resultados
+        <div class="linha"> div de linha de titulo da tabela
+  <div class="coluna result"><! foto user
   resultado
   </div>
-      <div class="coluna result"><!-- title do nome -->
-  resultado
-      </div>
-      <div class="coluna result"><!-- email do usuario -->
-  resultado
-      </div>
-      <div class="coluna result"><!-- Opcoes -->
-   resultado
-      </div>
+      <div class="coluna result"><!-title do nome
 
+      </div>
+      <div class="coluna result"><!- email do usuario
+  resultado
+      </div>
+      <div class="coluna result">Opcoes
+   resultado
+ </div> -->
+
+<?php
+
+
+      foreach ($rows as $row) {
+      $usuario_codigo = $row['usuario_codigo'];
+      $usuario_nome = $row['usuario_nome'];
+      $usuario_email = $row['usuario_email'];
+
+      echo ' <div class="linha"><!-- div de linha de titulo da tabela -->
+       <div class="coluna result"><!-- foto user -->
+       <img src="../media/Hacker-128.png" width="20px"/>
+       </div>
+           <div class="coluna result"><!-- title do nome -->
+     '. $usuario_nome .'
+           </div>
+           <div class="coluna result"><!-- email do usuario -->
+       '. $usuario_email . '
+           </div>
+           <div class="coluna result"><!-- Opcoes -->
+        resultado
+           </div>';
+      }
+
+?>
 
   </div>
 

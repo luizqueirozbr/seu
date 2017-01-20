@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bootstrap - Prebuilt Layout</title>
-<?php include("session.php"); 
+<?php include("session.php");
 
 //echo  "olá " . $login_ssesion;
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		var href = $( this ).attr('href');
 		$("#conteudo_center").load(href);
 		});// fim menu
-		
+
 		// inicio olá email@ola.com
 		$("#usertobar").click(function(){
 			$("#usertobarmais").show("slow");
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			$("#usertobarmaisClose").click(function(){
 				$("#usertobarmais").hide("slow");
 				});
-		
+
 });
 
 
@@ -39,22 +39,25 @@ body{
 	background-color:#EFE9E9;
 	}
 	#conteudo_center{
-	
+
 	background-color:#EFE9E9;
 	padding: 10%;
-	
-	
+
+
 	}
+	#usertobar{
+		cursor:alias;
+		}
 	#usertobarmais{
-			background-color:#C2C6E7;
+			background-color:#EFE9E9;
 			position:absolute;
-			border:4px outset #C2C6E7;
+			border:2px outset #EFE9E9;
 			border-radius:5px;
 					}
 #usertobarmaisClose{
 	margin-top:2%;
-			margin-right:15px;
-			margin-left:55px;
+	right:0px;
+	left:160px;
 	position:relative;
 	animation:ease-out;
 	animation-direction:normal;
@@ -82,18 +85,21 @@ body{
       <li><a href="#"></a></li>
       <li></li>
     </ul>
-    
-    <div class="navbar-text"><div id="usertobar"><?php echo "Olá, " . $usuarioNome . " " ; ?>  </div>
-    
+
+    <div class="navbar-text"><div id="usertobar"> <span class=" glyphicon glyphicon-plus"></span><?php echo "Olá, " . $usuarioNome . " " ; ?>  </div>
+
     <div id="usertobarmais" style="display:none;"> <p id="usertobarmaisClose"> <span class="glyphicon glyphicon-eject"></span> </p>
-    nome : <?php echo $usuarioNome; ?> </br>
-    email: <?php echo $usuarioEmail; ?> </br>
-    <a href="">editar</a>
-	<a href="../logout.php">&nbsp; <span class="glyphicon  glyphicon-log-out" />Sair</a> </div>
+    <center><img src="../media/Hacker-128.png"  class="img-circle img-responsive"></img></center>
+    <strong> Nome: </strong><?php echo $usuarioNome; ?> </br>
+    <strong> Nivel de acesso: </strong> 0 </br>
+     <strong> Exp: </strong> 0 pts </br>
+    <strong> E-mail: </strong> <?php echo $usuarioEmail; ?> </br>
+    <a href="">Editar Informações do perfil </a> </br>
+	<center><a href="../logout.php">&nbsp; <span class="glyphicon  glyphicon-log-out" />Sair</a> </div></center>
     </div>
-    
-    
-    
+
+
+
   </div>
 </nav>
 
@@ -102,7 +108,7 @@ body{
 <div id="box_home"></div>
 <!--
 aprender e aperfeiçoar expressoes regolares;
- $url = file_get_contents('https://www.bcb.gov.br'); 
+ $url = file_get_contents('https://www.bcb.gov.br');
 $conteudo = array();
 $pattern = '/[0,000-9,999]{1,}/i';
 preg_match_all($pattern, $url, $conteudo);
